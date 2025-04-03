@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:scrollbars="vertical"
+    android:scrollbarSize="10dp"
+    android:scrollbarStyle="insideInset"
+    android:orientation="vertical"
+    tools:context=".CreaRegPropi">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="22sp"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:text=" Registro de Propietarios" />
+
+    <EditText
+        android:id="@+id/editdni"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:ems="100"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="textPersonName"
+        android:text="DNI/RUC " />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:collapseColumns="2">
+                <TableRow>
+                    <EditText
+                        android:id="@+id/editnm1prop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:ems="10"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:inputType="textPersonName"
+                        android:text="Nombre 1" />
+
+                    <EditText
+                        android:id="@+id/editnm2prop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:ems="10"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:inputType="textPersonName"
+                        android:text="Nombre 2" />
+
+                </TableRow>
+                <TableRow>
+                <EditText
+                    android:id="@+id/editap1pro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:ems="10"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:inputType="textPersonName"
+                    android:text="Apellido 1" />
+
+                    <EditText
+                        android:id="@+id/editap2pro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:ems="10"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:inputType="textPersonName"
+                        android:text="Apellido 2" />
+
+                </TableRow>
+            </TableLayout>
+
+            <Spinner
+        android:id="@+id/spnLocali"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:collapseColumns="2">
+            <TableRow>
+                <EditText
+                    android:id="@+id/editncell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:ems="10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
+                    android:text="Telefono Cell " />
+
+                <EditText
+                    android:id="@+id/editmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    android:ems="10"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
+                    android:text="mail" />
+
+            </TableRow>
+
+<TableRow>
+    <EditText
+        android:id="@+id/editdirem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:inputType="textPersonName"
+        android:text="Direccion Ref." />
+
+</TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/chbNotif"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Recibe Notificaciones" />
+
+                    <CheckBox
+                        android:id="@+id/chbBitac"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Notifica Admin/Segd." />
+
+                </TableRow>
+                <TableRow>
+                    <CheckBox
+                        android:id="@+id/chbEstado"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Activo" />
+
+
+                </TableRow>
+            </TableLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        >
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text=" Crear Propi"
+            android:onClick="execRegPropietario"
+            android:textSize="14sp">
+        </Button>
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Cancelar"
+            android:onClick="execCreaResidentes"
+            android:textSize="14sp">
+        </Button>
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

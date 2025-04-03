@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:orientation="vertical"
+    tools:context=".MacroLotes">
+
+    <EditText
+        android:id="@+id/editinfref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="La informacion aqui suministrada debe ser oficial, en contendido asi como los Administradores Globales."/>
+
+    <TextView
+        android:id="@+id/txtnmbrv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:text=" Creacion de MacroLotes/Lotes" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/editMlote"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="MacroLote/Lote/Oficina" />
+
+            <CheckBox
+                android:id="@+id/chbMacro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Macro" />
+
+            <EditText
+                android:id="@+id/editMcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="CodigoLote" />
+
+            <EditText
+                android:id="@+id/editMLcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="CodigoLoteMacro" />
+
+            <EditText
+                android:id="@+id/editUbica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="Direccion Lote" />
+
+            <EditText
+                android:id="@+id/editTel1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="Telefono Convencional" />
+
+            <EditText
+                android:id="@+id/editTel2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:inputType="textPersonName"
+                android:text="Telefono Celular" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                >
+                <Button
+                    android:id="@+id/bttgrb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="Grabar" />
+
+                <Button
+                    android:id="@+id/bttnxt"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+
+                    android:text=" next " />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txtkboos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="fill_vertical"
+        android:gravity="right"
+        android:text=" by khuboss " />
+
+</LinearLayout>

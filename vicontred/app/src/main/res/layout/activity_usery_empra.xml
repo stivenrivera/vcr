@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UseryEmpra">
+
+
+    <TextView
+        android:id="@+id/txtinfref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="5dp"
+        android:text=" V C R "
+        android:textSize="22sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btCAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="Crear Admin"
+            android:textSize="18sp"></Button>
+
+        <Button
+            android:id="@+id/btCEmpr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="Crear Empre"
+            android:textSize="18sp"></Button>
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="start">
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:ems="100"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="La información aquí suministrada, creara una entidad y su administrador.
+Este registro es UNICO, el mal registro implica el posible no uso de la app.
+Se realizara una verificacion de la misma.
+Hay una secuencia determinada de pasos a seguir previo al registro del usuario final.
+El uso DOLOSA de esta aplicación no es responsabilidad de la khuboss.
+Las REPERCUSIONES legales son ABSOLUTA RESPONSABILIDAD DEL USUARIO.
+La informacion sera verificada antes de su uso en la app"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text=" Grabar "
+                android:textSize="18sp">
+            </Button>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="Cancelar"
+                android:textSize="18sp">
+            </Button>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

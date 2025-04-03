@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cvrBienvenido">
+
+    <!-- Contenedor principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <!-- Carrusel de imágenes (Banner) -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="10dp">
+
+            <TableRow android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp"
+                    android:gravity="center"
+                    android:text="@string/title_activity" />
+            </TableRow>
+
+            <TableRow android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="@string/title_name" />
+            </TableRow>
+
+            <TableRow android:gravity="center_horizontal">
+                <ImageButton
+                    android:id="@+id/imbVCR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    app:srcCompat="@drawable/vcr212x65" />
+            </TableRow>
+
+            <TableRow android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_welcomen"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/textnmUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:gravity="center" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- Botones de Registro -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btnRegistroLocalizaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Localizaciones"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnRegistroSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Seguridad"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnRegistroPropietarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Propietarios"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnRegistroGuardiaSeguridad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de guardias de seguridad"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnGuardiasTurno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de guardias en turno"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Botón Flotante de Alarma -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAlarma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/alerta"
+        android:contentDescription="Botón de Alarma"
+        app:backgroundTint="#FF0000"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
