@@ -7,7 +7,8 @@ import javax.persistence.*;
 public class Administrador {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generación automática del ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
     private String dni;
