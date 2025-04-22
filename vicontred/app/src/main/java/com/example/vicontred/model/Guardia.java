@@ -1,49 +1,42 @@
-package com.example.sec.entidades;
+package com.example.vicontred.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
-@Table(name = "guardias", schema = "db_seguridad")
+@Table(name = "Guardias", schema = "db_seguridad")
 public class Guardia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_guardia")
     private Long idGuardia;
-
-    @Column(name = "dni")
     private String dni;
-
-    @Column(name = "primer_apellido")
     private String primerApellido;
-
-    @Column(name = "segundo_apellido")
     private String segundoApellido;
-
-    @Column(name = "primer_nombre")
     private String primerNombre;
-
-    @Column(name = "segundo_nombre")
     private String segundoNombre;
-
-    @Column(name = "telefono")
     private String telefono;
-
-    @Column(name = "fecha_de_nacimiento")
-    private LocalDate fechaDeNacimiento;
-
-    @Column(name = "codigo_guardia")
+    private String fechaDeNacimiento;
     private String codigoGuardia;
-
-    @Column(name = "record_militar")
     private String recordMilitar;
-
-    @Column(name = "reg_auditoria")
     private String regAuditoria;
-
-    @Column(name = "correo")
     private String correo;
+
+    public Guardia(String dni, String primerApellido, String segundoApellido,
+            String primerNombre, String segundoNombre, String telefono,
+            String fechaDeNacimiento, String codigoGuardia, String recordMilitar,
+            String regAuditoria, String correo) {
+        this.dni = dni;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
+        this.primerNombre = primerNombre;
+        this.segundoNombre = segundoNombre;
+        this.telefono = telefono;
+        this.fechaDeNacimiento = fechaDeNacimiento;
+        this.codigoGuardia = codigoGuardia;
+        this.recordMilitar = recordMilitar;
+        this.regAuditoria = regAuditoria;
+        this.correo = correo;
+    }
 
     // Getters y Setters
 
@@ -103,11 +96,11 @@ public class Guardia {
         this.telefono = telefono;
     }
 
-    public LocalDate getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
@@ -143,5 +136,3 @@ public class Guardia {
         this.correo = correo;
     }
 }
-
-

@@ -90,6 +90,10 @@
                 android:layout_height="wrap_content"
                 android:text="Seguridad " />
 
+
+                <!-- // solamente el administrador puede seleccionar los cheks . todos tienen seleccionado administracion
+                // un check con residente especifico : muestra combo con listado de localizacion -->
+
         </TableRow>
 
 
@@ -119,6 +123,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:textSize="14sp"/>
+                <!-- // no mas de 50 -->
 
         </TableRow>
 
@@ -138,6 +143,9 @@
                 android:gravity="left"
                 android:inputType="textMultiLine"
                 android:hint="Texto Notifica ( 350 caracteres maximo )"/>
+
+                <!-- //no mas de 350 -->
+
         </TableRow>
 
     </TableLayout>

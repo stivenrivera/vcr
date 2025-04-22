@@ -3,50 +3,47 @@ package com.example.vicontred.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "administrador", schema = "db_empresa")
-public class Administrador {
+@Table(name = "propietarios", schema = "dbpersonas")
+public class Propietario {
 
     @Id
-    @Column(name = "dni", nullable = false, length = 20)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String dni;
-
-    @Column(name = "primer_nombre", length = 50)
     private String primerNombre;
-
-    @Column(name = "segundo_nombre", length = 50)
     private String segundoNombre;
-
-    @Column(name = "primer_apellido", length = 50)
     private String primerApellido;
-
-    @Column(name = "segundo_apellido", length = 50)
     private String segundoApellido;
-
-    @Column(name = "telefono", length = 15)
+    private String localizacion;
     private String telefono;
+    private String email;
+    private String direccion;
 
-    @Column(name = "mail", length = 50)
-    private String mail;
-
-    // Relación con la tabla User
-    @OneToOne(mappedBy = "administrador", cascade = CascadeType.ALL)
-    private User user;
-
-    public Administrador() {
-    }
-
-    public Administrador(String dni, String primerNombre, String segundoNombre,
-            String primerApellido, String segundoApellido, String telefono, String mail) {
+    public Propietario(String dni, String primerNombre, String segundoNombre,
+            String primerApellido, String segundoApellido, String localizacion,
+            String telefono, String email, String direccion) {
         this.dni = dni;
         this.primerNombre = primerNombre;
         this.segundoNombre = segundoNombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
+        this.localizacion = localizacion;
         this.telefono = telefono;
-        this.mail = mail;
+        this.email = email;
+        this.direccion = direccion;
     }
 
     // Getters y Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getDni() {
         return dni;
     }
@@ -87,6 +84,14 @@ public class Administrador {
         this.segundoApellido = segundoApellido;
     }
 
+    public String getLocalizacion() {
+        return localizacion;
+    }
+
+    public void setLocalizacion(String localizacion) {
+        this.localizacion = localizacion;
+    }
+
     public String getTelefono() {
         return telefono;
     }
@@ -95,16 +100,19 @@ public class Administrador {
         this.telefono = telefono;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getMail() {
-        return mail;
+    public String getDireccion() {
+        return direccion;
     }
 
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
 }

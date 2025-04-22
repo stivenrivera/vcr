@@ -16,5 +16,9 @@ public class GuardiaService {
     public List<Guardia> obtenerTodosLosGuardias() {
         return guardiaRepository.findAll();
     }
+
+    public Guardia registrarGuardia(Guardia guardia) {
+        return guardiaRepository.save(guardia);
+    }
 }
 

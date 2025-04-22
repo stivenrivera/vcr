@@ -76,6 +76,9 @@
         </TableLayout>
 
         <!-- Botones de Registro -->
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,7 +135,19 @@
                 android:padding="10dp"
                 android:textColor="@android:color/black"
                 android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btnCrearNofi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Crear notificacion"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
         </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 

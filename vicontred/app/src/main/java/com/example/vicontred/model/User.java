@@ -1,25 +1,36 @@
 package com.example.vicontred.model;
 
 import javax.persistence.*;
+import com.google.gson.annotations.SerializedName;
 
 @Entity
-@Table(name = "user", schema = "dbuser") // Asegúrate de usar el schema correcto
+@Table(name = "user", schema = "dbuser")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user", nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String user;
 
     @Column(name = "reg_security", nullable = false)
     private String reg_security;
 
-    // Constructor
+    @Column(name = "tipo_user")
+    @SerializedName("tipo_user")
+    private String tipo_user;
+
     public User(String user, String reg_security) {
         this.user = user;
         this.reg_security = reg_security;
+    }
+
+    // Constructor
+    public User(String user, String reg_security, String tipo_user) {
+        this.user = user;
+        this.reg_security = reg_security;
+        this.tipo_user = tipo_user;
     }
 
     // Getters y Setters
@@ -45,5 +56,13 @@ public class User {
 
     public void setReg_security(String reg_security) {
         this.reg_security = reg_security;
+    }
+
+    public String getTipo_user() {
+        return tipo_user;
+    }
+
+    public void setTipo_user(String tipo_user) {
+        this.tipo_user = tipo_user;
     }
 }

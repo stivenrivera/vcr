@@ -17,11 +17,19 @@ import java.util.Date;
 import java.util.Map;
 import java.text.SimpleDateFormat;
 import com.example.vicontred.model.Password;
-
+import com.example.vicontred.model.Auditoria;
+import android.content.Context;
+import android.content.res.Configuration;
+import java.util.Locale;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import com.example.vicontred.SecurityUtils;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
+import java.util.List;
 
 public class CreaAdmin extends AppCompatActivity {
 
@@ -60,17 +68,17 @@ public class CreaAdmin extends AppCompatActivity {
                 String email = lceditmail.getText().toString();
                 String cell = lceditncell.getText().toString();
                 boolean esAdmin = lcchbAdmin.isChecked();
-
+                String regSec = SecurityUtils.generarIndiceEncriptado();
+                String tipo_user = "Administrador";
                 // Validación de datos
                 if (!user.isEmpty() && !pass.isEmpty() && pass.equals(cpass) && !dni.isEmpty() && !nm1user.isEmpty()
                         && !apell1.isEmpty()) {
                     // Crear un objeto User
-                    User nuevoUsuario = new User(user, pass);
+                    User nuevoUsuario = new User(user, regSec, tipo_user);
                     Log.d("DEBUG", "Username: " + user);
                     // Configurar Retrofit
                     Retrofit retrofit = RetrofitInstance.getRetrofitInstance();
                     ApiService apiService = retrofit.create(ApiService.class);
-
                     Call<User> callUser = apiService.crearUsuario(nuevoUsuario);
                     callUser.enqueue(new Callback<User>() {
                         @Override
@@ -79,7 +87,7 @@ public class CreaAdmin extends AppCompatActivity {
                                 User usuarioCreado = response.body();
                                 Toast.makeText(CreaAdmin.this, "Usuario creado con éxito", Toast.LENGTH_SHORT).show();
 
-                                // 👉 REGISTRAR PASSWORD
+                                // REGISTRAR PASSWORD
                                 Password nuevaPassword = new Password(pass, usuarioCreado);
                                 Call<Password> callPass = apiService.registrarPassword(nuevaPassword);
                                 callPass.enqueue(new Callback<Password>() {
@@ -98,7 +106,7 @@ public class CreaAdmin extends AppCompatActivity {
                                     }
                                 });
 
-                                // 👉 REGISTRAR ADMINISTRADOR
+                                // REGISTRAR ADMINISTRADOR
                                 Administrador nuevoAdministrador = new Administrador(dni, nm1user, nm2user, apell1,
                                         apell2, cell, email);
                                 nuevoAdministrador.setUser(usuarioCreado);
@@ -111,7 +119,11 @@ public class CreaAdmin extends AppCompatActivity {
                                             Toast.makeText(CreaAdmin.this, "Administrador registrado",
                                                     Toast.LENGTH_SHORT).show();
 
-                                            // 👉 REGISTRAR EQUIPO
+                                            // REGISTRAR EQUIPO
+                                            // Aquí obtenemos el país directamente desde el contexto
+                                            String pais = obtenerPais();
+
+                                            // Datos del equipo
                                             Map<String, String> datosEquipo = DeviceInfo
                                                     .obtenerDatosDelDispositivo(CreaAdmin.this);
                                             Equipo nuevoEquipo = new Equipo(
@@ -131,6 +143,39 @@ public class CreaAdmin extends AppCompatActivity {
                                                     if (response.isSuccessful()) {
                                                         Toast.makeText(CreaAdmin.this, "Equipo registrado",
                                                                 Toast.LENGTH_SHORT).show();
+                                                        // REGISTRAR AUDITORÍA
+                                                        String fecha = new SimpleDateFormat("yyyy-MM-dd")
+                                                                .format(new Date());
+                                                        String hora = new SimpleDateFormat("HH:mm:ss")
+                                                                .format(new Date());
+                                                        String equipo = datosEquipo.get("modelo");
+                                                        String usuario = usuarioCreado.getUser();
+                                                        String token = "TOKEN_GENERADO";
+
+                                                        Auditoria nuevaAuditoria = new Auditoria(fecha, hora, pais,
+                                                                usuario, equipo, token, regSec);
+                                                        Call<Auditoria> callAuditoria = apiService
+                                                                .registrarAuditoria(nuevaAuditoria);
+                                                        callAuditoria.enqueue(new Callback<Auditoria>() {
+                                                            @Override
+                                                            public void onResponse(Call<Auditoria> call,
+                                                                    Response<Auditoria> response) {
+                                                                if (response.isSuccessful()) {
+                                                                    Log.d("AUDITORIA",
+                                                                            "Auditoría registrada correctamente");
+                                                                } else {
+                                                                    Log.e("AUDITORIA", "Error al registrar auditoría: "
+                                                                            + response.code());
+                                                                }
+                                                            }
+
+                                                            @Override
+                                                            public void onFailure(Call<Auditoria> call, Throwable t) {
+                                                                Log.e("AUDITORIA", "Fallo al registrar auditoría: "
+                                                                        + t.getMessage());
+                                                            }
+                                                        });
+
                                                     } else {
                                                         Toast.makeText(CreaAdmin.this, "Error al registrar equipo",
                                                                 Toast.LENGTH_SHORT).show();
@@ -177,6 +222,39 @@ public class CreaAdmin extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private String obtenerPais() {
+        // Variable para almacenar el país
+        String pais = "Desconocido";
+
+        // Obtiene el servicio de ubicación
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        // Verifica si la ubicación está disponible
+        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            // Obtén la última ubicación conocida
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            if (location != null) {
+                // Utiliza Geocoder para obtener el país basado en la latitud y longitud
+                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+                try {
+                    List<android.location.Address> addresses = geocoder.getFromLocation(
+                            location.getLatitude(),
+                            location.getLongitude(),
+                            1);
+
+                    if (addresses != null && !addresses.isEmpty()) {
+                        // Asigna el nombre del país a la variable
+                        pais = addresses.get(0).getCountryName();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return pais; // Devuelve el país
     }
 
     public void execRegAdmin(View view) {

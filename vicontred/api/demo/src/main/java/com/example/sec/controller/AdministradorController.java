@@ -8,7 +8,7 @@ import com.example.sec.repository.AdministradorRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/administradores")
+@RequestMapping("/api/administradores")
 public class AdministradorController {
 
     @Autowired

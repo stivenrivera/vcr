@@ -43,6 +43,7 @@ public class cvrBienvenido extends AppCompatActivity {
         Button btnPropietarios = findViewById(R.id.btnRegistroPropietarios);
         Button btnSeguridadTurno = findViewById(R.id.btnGuardiasTurno);
         Button btnRegistroGuardiaSeguridad = findViewById(R.id.btnRegistroGuardiaSeguridad);
+        Button btnCrearNofi = findViewById(R.id.btnCrearNofi);
 
         btnLocalizaciones.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +81,14 @@ public class cvrBienvenido extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(cvrBienvenido.this, CreaGuard.class);
+                startActivity(intent);
+            }
+        });
+
+        btnCrearNofi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(cvrBienvenido.this, CreaNotific.class);
                 startActivity(intent);
             }
         });

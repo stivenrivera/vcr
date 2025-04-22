@@ -54,7 +54,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:inputType="textPersonName"
-        android:text="DNI/RUC " />
+        android:hint="DNI/RUC " />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:inputType="textPersonName"
-                        android:text="Nombre 1" />
+                        android:hint="Nombre 1" />
 
                     <EditText
                         android:id="@+id/editnm2prop"
@@ -85,7 +85,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:inputType="textPersonName"
-                        android:text="Nombre 2" />
+                        android:hint="Nombre 2" />
 
                 </TableRow>
                 <TableRow>
@@ -98,7 +98,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
                     android:inputType="textPersonName"
-                    android:text="Apellido 1" />
+                    android:hint="Apellido 1" />
 
                     <EditText
                         android:id="@+id/editap2pro"
@@ -109,7 +109,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:inputType="textPersonName"
-                        android:text="Apellido 2" />
+                        android:hint="Apellido 2" />
 
                 </TableRow>
             </TableLayout>
@@ -143,7 +143,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:inputType="textPersonName"
-                    android:text="Telefono Cell " />
+                    android:hint="Telefono Cell " />
 
                 <EditText
                     android:id="@+id/editmail"
@@ -156,7 +156,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:inputType="textPersonName"
-                    android:text="mail" />
+                    android:hint="mail" />
 
             </TableRow>
 
@@ -171,7 +171,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:inputType="textPersonName"
-        android:text="Direccion Ref." />
+        android:hint="Direccion Ref." />
 
 </TableRow>
                 <TableRow>

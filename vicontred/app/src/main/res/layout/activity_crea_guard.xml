@@ -68,7 +68,7 @@
             android:enabled="true"
             android:text="Activo" />
 
-        <TextView
+        <EditText
             android:id="@+id/editcdgrd"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -323,6 +323,7 @@
         android:gravity="center"
         >
         <Button
+            android:id="@+id/btnCrearGurd"
             android:layout_width="125dp"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
@@ -331,6 +332,7 @@
             android:onClick="execRegGrdSgr">
         </Button>
         <Button
+            android:id="@+id/btnCancelar"
             android:layout_width="125dp"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"

@@ -55,18 +55,14 @@
         android:layout_height="wrap_content"
         android:text="Localizacion Matriz S/N" />
 
-    <EditText
-        android:id="@+id/editspinner"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="14sp"
-        android:ems="100"
+    <Spinner
+        android:id="@+id/spinnerLocalMatriz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:inputType="textPersonName"
-        android:text="AQUI DEBE HABER UN SPINNER Local Matriz" />
+        android:layout_marginLeft="10dp" />
 
 
     <EditText
@@ -143,6 +139,7 @@
         android:gravity="center"
         >
         <Button
+            android:id="@+id/btnCrearSitio"
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"

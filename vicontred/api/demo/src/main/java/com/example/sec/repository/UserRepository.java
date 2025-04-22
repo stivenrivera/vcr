@@ -4,5 +4,5 @@ import com.example.sec.entidades.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Puedes agregar consultas personalizadas si las necesitas
+    
 }

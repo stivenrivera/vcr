@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/guardias")
-@CrossOrigin(origins = "*") // Opcional, útil para peticiones desde Android
 public class GuardiaController {
 
     @Autowired
@@ -19,5 +18,12 @@ public class GuardiaController {
     public List<Guardia> obtenerGuardias() {
         return guardiaService.obtenerTodosLosGuardias();
     }
+
+
+    @PostMapping
+    public Guardia registrarGuardia(@RequestBody Guardia guardia) {
+        return guardiaService.registrarGuardia(guardia);
+    }
 }
+
 

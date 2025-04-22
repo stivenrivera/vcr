@@ -3,8 +3,8 @@ package com.example.sec.controller;
 import com.example.sec.entidades.User;
 import com.example.sec.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;  // Importa ResponseEntity
-import org.springframework.http.HttpStatus;  // Importa HttpStatus
+import org.springframework.http.ResponseEntity; 
+import org.springframework.http.HttpStatus; 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
